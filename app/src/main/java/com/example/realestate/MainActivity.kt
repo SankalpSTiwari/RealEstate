@@ -9,11 +9,13 @@ import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
     var cnt = 0
+
+    var tv: TextView? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        var tv = findViewById<TextView>(R.id.textView)
+        tv = findViewById(R.id.textView)
         val showDialogButton = findViewById<Button>(R.id.dialogButton)
         val closeAppButton = findViewById<Button>(R.id.closeAppButton)
 
@@ -21,18 +23,17 @@ class MainActivity : AppCompatActivity() {
             showCustomDialog()
         }
 
-        var b1 = findViewById<Button>(R.id.plus5)
+        val b1 = findViewById<Button>(R.id.plus5)
         b1.setOnClickListener{
             cnt += 5
-            tv.setText("Counter: $cnt")
+
             val intent = Intent(this, Plus5Activity::class.java)
             startActivity(intent)
         }
 
-        var b2 = findViewById<Button>(R.id.plus10)
+        val b2 = findViewById<Button>(R.id.plus10)
         b2.setOnClickListener{
             cnt += 10
-            tv.setText("Counter: $cnt")
             val intent = Intent(this, Plus10Activity::class.java)
             startActivity(intent)
         }
@@ -58,5 +59,10 @@ class MainActivity : AppCompatActivity() {
 
         // Show the dialog
         dialog.show()
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        tv?.text = "Counter: $cnt"
     }
 }
