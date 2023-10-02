@@ -11,9 +11,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="7dp"
-        android:layout_marginTop="48dp"
         android:layout_marginEnd="22dp"
+        android:layout_marginBottom="53dp"
         android:text="Plus 5"
+        app:layout_constraintBottom_toTopOf="@+id/closeAppButton"
         app:layout_constraintEnd_toStartOf="@+id/plus10"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dialogButton" />
@@ -22,11 +23,11 @@
         android:id="@+id/plus10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="61dp"
+        android:layout_marginTop="48dp"
         android:text="Plus 10"
-        app:layout_constraintBottom_toTopOf="@+id/closeAppButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/plus5" />
+        app:layout_constraintStart_toEndOf="@+id/plus5"
+        app:layout_constraintTop_toBottomOf="@+id/dialogButton" />
 
     <Button
         android:id="@+id/dialogButton"
@@ -34,26 +35,44 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="48dp"
         android:text="Dialog"
-        app:layout_constraintBottom_toTopOf="@+id/plus10"
-        app:layout_constraintStart_toEndOf="@+id/plus5" />
+        app:layout_constraintBottom_toTopOf="@+id/plus5"
+        app:layout_constraintStart_toEndOf="@+id/plus5"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginBottom="80dp"
-        android:text="TextView"
+        android:layout_marginBottom="95dp"
+        android:gravity="center"
+        android:text="The Counter will start once you\nclick a plus button!"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/dialogButton"
-        app:layout_constraintStart_toStartOf="@+id/dialogButton" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <Button
         android:id="@+id/closeAppButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="75dp"
+        android:layout_marginBottom="83dp"
         android:text="Close"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/plus5" />
+        app:layout_constraintStart_toEndOf="@+id/plus5"
+        app:layout_constraintTop_toBottomOf="@+id/plus5" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="189dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="116dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/sjsu_logo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
